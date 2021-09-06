@@ -105,7 +105,7 @@
     <script>
         // sometimes it is helpful to introduce a random nonce to prevent caching
         let nonce = Math.floor(Math.random() * 100000);
-        $("a[href='/member/']").attr('href', '#?nonce=' + nonce);
+        $("a[href='/member/']").attr('href', '/member/?nonce=' + nonce);
     </script>
 </body>
 
