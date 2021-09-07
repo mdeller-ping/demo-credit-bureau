@@ -54,8 +54,8 @@
 
     <div class="container mt-5">
         <div class="alert alert-secondary" roles="alert">
-           <strong>mail</strong><?php echo $_SERVER['HTTP_X_PA_MAIL']; ?><br>
-           <strong>customerNumber</strong><?php echo $_SERVER['HTTP_X_PA_CUSTOMERNUMBER']; ?><br>
+           <strong>mail</strong>: <?php echo $_SERVER['HTTP_X_PA_MAIL']; ?><br>
+           <strong>customerNumber</strong>: <?php echo $_SERVER['HTTP_X_PA_CUSTOMERNUMBER']; ?><br>
         </div>
     </div>
 
