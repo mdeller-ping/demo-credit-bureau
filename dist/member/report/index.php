@@ -70,6 +70,8 @@ $jsonData = json_decode($response);
 
 echo "<pre>" . json_encode($jsonData, JSON_PRETTY_PRINT) . "</pre>";
 
+echo "<pre>" . $accessToken . "</pre>";
+
 ?>
 
     <!-- footer -->
