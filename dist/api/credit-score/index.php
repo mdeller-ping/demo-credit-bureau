@@ -5,10 +5,12 @@
     $rangeHigh = $seedNumber + 20;
     $rangeLow = $seedNumber - 20;
 
+    $myObj = new \stdClass();
+
     $myObj->TransUnionScore = rand ($rangeLow, $rangeHigh);
     $myObj->ExperianScore = rand ($rangeLow, $rangeHigh);
     $myObj->EquifaxScore = rand ($rangeLow, $rangeHigh);
     $myJSON = json_encode($myObj);
-    
+
     echo $myJSON;
 ?>
