@@ -17,26 +17,24 @@
     $json = json_encode(array(
         "status" => "completed",
         "consumers" => array(
-            "USConsumerCreditReport" => array(
-                "identifier" => "Individual Report 1",
-                "customerNumber" => "999XX00000",
-                "consumerReferralCode" => "300",
-                "multipleReportIndicator" => false,
-                "hitCode" => array(
-                    "code" => 1,
-                    "description" => "hit"
-                ),
-                "fileSinceDate" => "09012002",
-                "lastActivityDate" => "07072020",
-                "reportDate" => $now,
-                "subjectName" => array(
-                    "firstName" => "SHEMICA",
-                    "lastName" => "XXSHJF",
-                    "middleName" => "FAYE"
-                ),
-                "subjectSocialNum" => "666-79-5307",
-                "birthDate" => "07281989"
-            )
+            "identifier" => "Individual Report 1",
+            "customerNumber" => "999XX00000",
+            "consumerReferralCode" => "300",
+            "multipleReportIndicator" => false,
+            "hitCode" => array(
+                "code" => 1,
+                "description" => "hit"
+            ),
+            "fileSinceDate" => "09012002",
+            "lastActivityDate" => "07072020",
+            "reportDate" => $now,
+            "subjectName" => array(
+                "firstName" => "SHEMICA",
+                "lastName" => "XXSHJF",
+                "middleName" => "FAYE"
+            ),
+            "subjectSocialNum" => "666-79-5307",
+            "birthDate" => "07281989"
         ),
         "links" => array(
             "identifier" => "Individual Report 1",
