@@ -68,11 +68,13 @@ $response = \Httpful\Request::get($url)
 
 $jsonData = json_decode($response);
 
-echo "<pre>" . json_encode($jsonData, JSON_PRETTY_PRINT) . "</pre>";
-
-echo "<pre>" . $accessToken . "</pre>";
-
 ?>
+
+    <div class="container mt-5">
+        <div class="alert alert-primary" roles="alert">
+           <pre><?php echo json_encode($jsonData, JSON_PRETTY_PRINT); ?></pre>
+        </div>
+    </div>
 
     <!-- footer -->
     <nav class="navbar navbar-light bg-light mt-5">
