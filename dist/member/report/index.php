@@ -50,15 +50,37 @@
         </div>
     </div>
 
-    <div class="container mt-5">
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem dolor sed viverra ipsum. Amet nisl suscipit adipiscing bibendum est ultricies integer. Molestie a iaculis at erat
-            pellentesque. Ornare arcu odio ut sem nulla. Tristique senectus et netus et malesuada fames. In nibh mauris cursus mattis molestie a iaculis at. Massa tempor nec feugiat nisl pretium fusce id. In metus vulputate eu scelerisque felis imperdiet.
-            Porta lorem mollis aliquam ut porttitor leo a. Viverra accumsan in nisl nisi. Turpis in eu mi bibendum neque egestas congue quisque egestas. Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim. Neque viverra justo nec
-            ultrices dui sapien eget mi proin. Maecenas pharetra convallis posuere morbi.</p>
-        <p class="lead">Viverra vitae congue eu consequat ac. Nam libero justo laoreet sit. Malesuada proin libero nunc consequat interdum varius sit. Facilisi morbi tempus iaculis urna id. Sed arcu non odio euismod lacinia at quis risus. Molestie at elementum eu facilisis.
-            Justo donec enim diam vulputate ut. Duis ut diam quam nulla porttitor massa. Elementum pulvinar etiam non quam lacus suspendisse faucibus interdum. Et odio pellentesque diam volutpat. Non quam lacus suspendisse faucibus interdum. Nunc lobortis
-            mattis aliquam faucibus purus in massa. Sagittis id consectetur purus ut faucibus pulvinar.</p>
-    </div>
+        <?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://mdeller-authorize-pingauthorize.ping-devops.com/credit-report',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImsxIiwicGkuYXRtIjoiMmNucCJ9.eyJzY29wZSI6Im9wZW5pZCBhZGRyZXNzIGVtYWlsIHBob25lIHByb2ZpbGUiLCJjbGllbnRfaWQiOiJQaW5nQWNjZXNzIiwiVXNlcm5hbWUiOiJhZDU1YTM0YS03NjNmLTM1OGYtOTNmOS1kYTg2ZjllY2Q5ZTQiLCJPcmdOYW1lIjoiUGluZ0lkZW50aXR5IiwiY3VzdG9tZXJOdW1iZXIiOiI5OTlYWDAwMDAwIiwiZXhwIjoxNjMxMDIzNjk2fQ.QTPMWCev9irDM1jeXSJCdGCgOlyjpkfIyBaWWpfbrnQNb2l9xXadmtn0m9CXHRl8U-v3uWPAMPStk_zxHicX8E9yd0VtSJDDKLUFq5DZ2rjuacjdXJMQztBOr8pL4diJREdr1noSTCJoLRyTNP_frpqT_1OU5wvX-CArvBBnabOv_b650Uwv99IHrxpBtc48awp0QaliWQ7qAglXtVy9GjF0fqNpCJSPKGVpYnUZwpBN8_B6lrV3qQPZZQnuRhEMkSk-4WyD0elu_RKkVVGPNMq38YLnb1MZxvkC43-pEkZkh-I0O2qctYLyqHPjCN6RomyspPg7U4IaNOIpK1Lqww'
+  ),
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+
+$jsonData = json_decode($response);
+
+?>
+
+<pre>
+<?php
+echo json_encode($jsonData, JSON_PRETTY_PRINT);
+?>
+</pre>
 
     <!-- footer -->
     <nav class="navbar navbar-light bg-light mt-5">
@@ -83,16 +105,10 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-
-    <script>
-        // sometimes it is helpful to introduce a random nonce to prevent caching
-        let nonce = Math.floor(Math.random() * 100000);
-        $("a[href='#']").attr('href', '#?nonce=' + nonce);
-    </script>
 </body>
 
 </html>
