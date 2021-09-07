@@ -34,7 +34,35 @@
                 "middleName" => "FAYE"
             ),
             "subjectSocialNum" => "666-79-5307",
-            "birthDate" => "07281989"
+            "birthDate" => "07281989",
+            "fraudVictimIndicator" => array(
+                "code" => "V",
+                "description" => "Fraud Victim Initial Alert"
+            ),
+            "addresses" => array(
+                array(
+                    "addressType" => "current",
+                    "houseNumber" => "7249",
+                    "streetName" => "PAJJ ZAFW",
+                    "streetType" => "LN",
+                    "cityName" => "HUMBLE",
+                    "stateAbbr" => "TX",
+                    "zipCode" => "77396",
+                    "dateFirstReported" => "12002018",
+                    "addressLine1" => "7249 PAJJ ZAFW LN"
+                ),
+                array(
+                    "addressType" => "former",
+                    "houseNumber" => "3981",
+                    "streetName" => "OVNYH",
+                    "streetType" => "RD",
+                    "cityName" => "HOUSTON",
+                    "stateAbbr" => "TX",
+                    "zipCode" => "77053",
+                    "dateFirstReported" => "12002018",
+                    "addressLine1" => "7249 PAJJ ZAFW LN"                    
+                )
+            )
         ),
         "links" => array(
             "identifier" => "Individual Report 1",
