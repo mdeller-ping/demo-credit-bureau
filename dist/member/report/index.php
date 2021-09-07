@@ -46,6 +46,11 @@
     </nav>
     <!-- /navigation -->
 
+<?php
+
+$url = "https://mdeller-authorize-pingauthorize.ping-devops.com/credit-report";
+
+?>
     <div class="container-fluid" style="height:200px; background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://via.placeholder.com/1600x1024); background-repeat:no-repeat; background-position:center top;">
         <div class="container" style="padding: 80px 0px">
             <h1 class="display-4 text-white text-right">Credit Report</h1>
@@ -56,6 +61,7 @@
         <div class="alert alert-secondary" roles="alert">
            <strong>mail</strong>: <?php echo $_SERVER['HTTP_X_PA_MAIL']; ?><br>
            <strong>customerNumber</strong>: <?php echo $_SERVER['HTTP_X_PA_CUSTOMERNUMBER']; ?><br>
+           <strong>report url</strong>: <?php echo $url; ?><br>
         </div>
     </div>
 
@@ -63,7 +69,6 @@
 
 $curl = curl_init();
 
-$url = "https://mdeller-authorize-pingauthorize.ping-devops.com/credit-report";
 // $accessToken = "eyJhbGciOiJSUzI1NiIsImtpZCI6ImsxIiwicGkuYXRtIjoiMmNucCJ9.eyJzY29wZSI6Im9wZW5pZCBhZGRyZXNzIGVtYWlsIHBob25lIHByb2ZpbGUiLCJjbGllbnRfaWQiOiJQaW5nQWNjZXNzIiwiVXNlcm5hbWUiOiJhZDU1YTM0YS03NjNmLTM1OGYtOTNmOS1kYTg2ZjllY2Q5ZTQiLCJPcmdOYW1lIjoiUGluZ0lkZW50aXR5IiwiY3VzdG9tZXJOdW1iZXIiOiI5OTlYWDAwMDAwIiwiZXhwIjoxNjMxMDIzNjk2fQ.QTPMWCev9irDM1jeXSJCdGCgOlyjpkfIyBaWWpfbrnQNb2l9xXadmtn0m9CXHRl8U-v3uWPAMPStk_zxHicX8E9yd0VtSJDDKLUFq5DZ2rjuacjdXJMQztBOr8pL4diJREdr1noSTCJoLRyTNP_frpqT_1OU5wvX-CArvBBnabOv_b650Uwv99IHrxpBtc48awp0QaliWQ7qAglXtVy9GjF0fqNpCJSPKGVpYnUZwpBN8_B6lrV3qQPZZQnuRhEMkSk-4WyD0elu_RKkVVGPNMq38YLnb1MZxvkC43-pEkZkh-I0O2qctYLyqHPjCN6RomyspPg7U4IaNOIpK1Lqww";
 $accessToken = $_SERVER['HTTP_X_PA_TOKEN'];
 
