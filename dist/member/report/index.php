@@ -1,3 +1,5 @@
+<?php require('httpful.phar'); ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -52,38 +54,23 @@
 
 <?php
 
-echo $_SERVER['X-PA-ACCESS-TOKEN'];
-
-
 $curl = curl_init();
 
-curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://mdeller-authorize-pingauthorize.ping-devops.com/credit-report',
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => '',
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 0,
-  CURLOPT_FOLLOWLOCATION => true,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => 'GET',
-  CURLOPT_HTTPHEADER => array(
-    'Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImsxIiwicGkuYXRtIjoiMmNucCJ9.eyJzY29wZSI6Im9wZW5pZCBhZGRyZXNzIGVtYWlsIHBob25lIHByb2ZpbGUiLCJjbGllbnRfaWQiOiJQaW5nQWNjZXNzIiwiVXNlcm5hbWUiOiJhZDU1YTM0YS03NjNmLTM1OGYtOTNmOS1kYTg2ZjllY2Q5ZTQiLCJPcmdOYW1lIjoiUGluZ0lkZW50aXR5IiwiY3VzdG9tZXJOdW1iZXIiOiI5OTlYWDAwMDAwIiwiZXhwIjoxNjMxMDIzNjk2fQ.QTPMWCev9irDM1jeXSJCdGCgOlyjpkfIyBaWWpfbrnQNb2l9xXadmtn0m9CXHRl8U-v3uWPAMPStk_zxHicX8E9yd0VtSJDDKLUFq5DZ2rjuacjdXJMQztBOr8pL4diJREdr1noSTCJoLRyTNP_frpqT_1OU5wvX-CArvBBnabOv_b650Uwv99IHrxpBtc48awp0QaliWQ7qAglXtVy9GjF0fqNpCJSPKGVpYnUZwpBN8_B6lrV3qQPZZQnuRhEMkSk-4WyD0elu_RKkVVGPNMq38YLnb1MZxvkC43-pEkZkh-I0O2qctYLyqHPjCN6RomyspPg7U4IaNOIpK1Lqww'
-  ),
-));
+$url = "https://mdeller-authorize-pingauthorize.ping-devops.com/credit-report";
+// $accessToken = "eyJhbGciOiJSUzI1NiIsImtpZCI6ImsxIiwicGkuYXRtIjoiMmNucCJ9.eyJzY29wZSI6Im9wZW5pZCBhZGRyZXNzIGVtYWlsIHBob25lIHByb2ZpbGUiLCJjbGllbnRfaWQiOiJQaW5nQWNjZXNzIiwiVXNlcm5hbWUiOiJhZDU1YTM0YS03NjNmLTM1OGYtOTNmOS1kYTg2ZjllY2Q5ZTQiLCJPcmdOYW1lIjoiUGluZ0lkZW50aXR5IiwiY3VzdG9tZXJOdW1iZXIiOiI5OTlYWDAwMDAwIiwiZXhwIjoxNjMxMDIzNjk2fQ.QTPMWCev9irDM1jeXSJCdGCgOlyjpkfIyBaWWpfbrnQNb2l9xXadmtn0m9CXHRl8U-v3uWPAMPStk_zxHicX8E9yd0VtSJDDKLUFq5DZ2rjuacjdXJMQztBOr8pL4diJREdr1noSTCJoLRyTNP_frpqT_1OU5wvX-CArvBBnabOv_b650Uwv99IHrxpBtc48awp0QaliWQ7qAglXtVy9GjF0fqNpCJSPKGVpYnUZwpBN8_B6lrV3qQPZZQnuRhEMkSk-4WyD0elu_RKkVVGPNMq38YLnb1MZxvkC43-pEkZkh-I0O2qctYLyqHPjCN6RomyspPg7U4IaNOIpK1Lqww";
+$accessToken = $_SERVER['HTTP_X_PA_TOKEN'];
 
-$response = curl_exec($curl);
 
-curl_close($curl);
+$response = \Httpful\Request::get($url)
+->addHeader('Authorization', 'Bearer ' . $accessToken)
+->sendsJson()
+->send();
 
 $jsonData = json_decode($response);
 
-?>
+echo "<pre>" . json_encode($jsonData, JSON_PRETTY_PRINT) . "</pre>";
 
-<pre>
-<?php
-echo json_encode($jsonData, JSON_PRETTY_PRINT);
 ?>
-</pre>
 
     <!-- footer -->
     <nav class="navbar navbar-light bg-light mt-5">
