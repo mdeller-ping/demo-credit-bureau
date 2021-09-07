@@ -52,6 +52,12 @@
         </div>
     </div>
 
+    <div class="container mt-5">
+        <div class="alert alert-secondary" roles="alert">
+           <pre><?php echo $_SERVER['HTTP_X_PA_MAIL']; ?></pre>
+        </div>
+    </div>
+
 <?php
 
 $curl = curl_init();
