@@ -50,7 +50,10 @@
         </div>
     </div>
 
-        <?php
+<?php
+
+echo $_SERVER['X-PA-ACCESS-TOKEN'];
+
 
 $curl = curl_init();
 
