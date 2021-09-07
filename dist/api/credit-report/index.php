@@ -62,7 +62,48 @@
                     "dateFirstReported" => "12002018",
                     "addressLine1" => "7249 PAJJ ZAFW LN"                    
                 )
+            ),
+            "employments" => array(
+                array(
+                    "identifier" => "current",
+                    "occupation" => "HFIP JFICFY",
+                    "employer" => "IAX"
+                )
+            ),
+            "bankruptcies" => array(
+                array(
+                    "type" => "I",
+                    "filer" => "I",
+                    "industryCode" => "VF",
+                    "currentIntentOrDispositionCode" => array(
+                        "code" => "k",
+                        "description" => "DISMSD/CLSD CH13"
+                    )
+                )
+            ),
+            "trades" => array(
+                array(
+                    "accountNumber" => "41479992245654",
+                    "monthsReviewd" => 18,
+                    "customerName" => "HOUSTON FINANCE"
+                ),
+                array(
+                    "accountNumber" => "6879456442616",
+                    "monthsReviewd" => 5,
+                    "customerName" => "BANK OF WELLS"
+                ),
+                array(
+                    "accountNumber" => "795465462448",
+                    "monthsReviewd" => 24,
+                    "customerName" => "WESTERN SHAMROCK"
+                ),
+                array(
+                    "accountNumber" => "468798795462624",
+                    "monthsReviewd" => 18,
+                    "customerName" => "TOWN FUEL"
+                )
             )
+
         ),
         "links" => array(
             "identifier" => "Individual Report 1",
